@@ -1,0 +1,149 @@
+1.
+
+import numpy as np
+
+2.
+
+print(np.__version__)
+np.show_config()
+
+3. 
+Z = np.zeros(10)
+print(Z)
+
+6. 
+Z = np.zeros(10)
+Z[4] = 1
+print(Z)
+
+7. 
+
+Z = np.arange(10,50)
+print(Z)
+
+8.
+
+Z = np.arange(50)
+Z = Z[::-1]
+print(Z)
+
+9. 
+
+Z = np.arange(9).reshape(3, 3)
+print(Z)
+
+10. 
+
+nz = np.nonzero([1,2,0,0,4,0])
+print(nz)
+
+11.
+
+Z = np.eye(3)
+print(Z)
+
+12. 
+
+Z = np.random.random((3,3,3))
+print(Z)
+
+13. 
+
+Z = np.random.random((10,10))
+Zmin, Zmax = Z.min(), Z.max()
+print(Zmin, Zmax)
+
+14. 
+
+Z = np.random.random(30)
+m = Z.mean()
+print(m)
+
+15. 
+
+Z = np.ones((10,10))
+Z[1:-1,1:-1] = 0
+print(Z)
+
+17. 
+0 * np.nan
+np.nan == np.nan
+np.inf > np.nan
+np.nan - np.nan
+np.nan in set([np.nan])
+0.3 == 3 * 0.1
+
+print(0 * np.nan)
+print(np.nan == np.nan)
+print(np.inf > np.nan)
+print(np.nan - np.nan)
+print(np.nan in set([np.nan]))
+print(0.3 == 3 * 0.1)
+
+19. 
+
+Z = np.zeros((8,8),dtype=int)
+Z[1::2,::2] = 1
+Z[::2,1::2] = 1
+print(Z)
+
+20. 
+
+print(np.unravel_index(99,(6,7,8)))
+
+25. 
+
+Z = np.arange(11)
+Z[(3 < Z) & (Z < 8)] *= -1
+print(Z)
+
+28. 
+np.array(0) / np.array(0)
+np.array(0) // np.array(0)
+np.array([np.nan]).astype(int).astype(float)
+
+print(np.array(0) / np.array(0))
+print(np.array(0) // np.array(0))
+print(np.array([np.nan]).astype(int).astype(float))
+
+30. 
+Z1 = np.random.randint(0,10,10)
+Z2 = np.random.randint(0,10,10)
+print(np.intersect1d(Z1,Z2))
+
+40. 
+
+Z = np.random.random(10)
+Z.sort()
+print(Z)
+
+42. 
+
+A = np.random.randint(0,2,5)
+B = np.random.randint(0,2,5)
+equal = np.allclose(A,B)
+print(equal)
+equal = np.array_equal(A,B)
+print(equal)
+
+44. 
+
+Z = np.random.random((10,2))
+X,Y = Z[:,0], Z[:,1]
+R = np.sqrt(X**2+Y**2)
+T = np.arctan2(Y,X)
+print(R)
+print(T)
+
+53. 
+
+Z = (np.random.rand(10)*100).astype(np.float32)
+Y = Z.view(np.int32)
+Y[:] = Z
+print(Y)
+
+58. 
+X = np.random.rand(5, 10)
+Y = X - X.mean(axis=1, keepdims=True)
+Y = X - X.mean(axis=1).reshape(-1, 1)
+print(Y)
